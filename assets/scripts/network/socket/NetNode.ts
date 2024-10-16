@@ -354,7 +354,7 @@ export class NetNode {
     public socketSend(obj:RequestObject){
         obj.seq = obj.json.seq = this._seqId;
         obj.startTime = new Date().getTime()
-        this._socket.packAndSend(obj.json);
+        this._socket.packAndSend2(obj.json);
         this._seqId+=1;
         obj.sended = true;
         this._timer.schedule(obj.json,this._receiveTime);

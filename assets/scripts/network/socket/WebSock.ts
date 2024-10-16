@@ -26,14 +26,19 @@ export class WebSock implements ISocket {
 
 
     onMessage(msg):void{
-    
         // console.log("websocket onMessage0:",msg)
         var ab = msg
-        var view = new Uint8Array(ab)
-        var undata = gzip.unzip(view)
-        var c = new convert()
-        msg = c.byteToString(undata)
+
+        // 暂时忽略压缩
+        // var view = new Uint8Array(ab)
+        // var undata = gzip.unzip(view)
+        // var c = new convert()
+        // msg = c.byteToString(undata)
         // console.log("websocket onMessage1:",msg)
+
+        var view = new Uint8Array(ab)
+        var c = new convert()
+        msg = c.byteToString(view)
 
         //第一次
         if(this._key == ""){
@@ -66,8 +71,12 @@ export class WebSock implements ISocket {
         if(decrypted){
             var json = JSON.parse(decrypted);
             this.onJsonMessage(json);
+            
+            if(json.name !== "heartbeat") {
+                console.log("=============  onMessage key: ",this._key);
+                console.log("=============  onMessage message:", decrypted);
+            }
         }
-
 
     }
 
@@ -142,8 +151,30 @@ export class WebSock implements ISocket {
 
         // console.log("i8arr:",i8arr)
         this.send(i8arr)
+    }
 
+    /**
+     * json 加密打包
+     * @param send_data
+     */
+    public packAndSend2(send_data:any){
+        if(send_data.name !== "heartbeat") {
+            console.log("=============  SendMessage key:", this._key);
+            console.log("=============  SendMessage data:", send_data);
+        }
 
+        var encrypt = this._key == ""?send_data:this.encrypt(send_data);
+
+        if(typeof(encrypt)=='object'){
+            encrypt = JSON.stringify(encrypt);
+        }
+
+        this.send(this.stringToByteArray(encrypt));
+    }
+
+    public stringToByteArray(str: string): Uint8Array {
+        const encoder = new TextEncoder();
+        return encoder.encode(str);
     }
 
     /**
