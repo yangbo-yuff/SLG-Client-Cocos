@@ -262,7 +262,7 @@ export default class GeneralTool extends Component {
         }
 
         var obj = Object();
-        obj.title = "武将配置";
+        obj.title = "将领配置";
         obj.list = this._cfgs
        
         var str = JSON.stringify(obj, null, "\t");

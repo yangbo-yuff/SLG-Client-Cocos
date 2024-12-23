@@ -123,7 +123,7 @@ export default class MapProxy {
             cfg.type = configList[i].type;
             cfg.level = configList[i].level;
             cfg.name = configList[i].name;
-            cfg.wood = configList[i].Wood;
+            cfg.wood = configList[i].wood;
             cfg.iron = configList[i].iron;
             cfg.stone = configList[i].stone;
             cfg.grain = configList[i].grain;

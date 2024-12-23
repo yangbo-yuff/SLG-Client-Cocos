@@ -90,7 +90,7 @@ export class ArmyData {
 
 export default class ArmyProxy {
     protected _maxArmyCnt: number = 5;//一个城池最大军队数量
-    //武将基础配置数据
+    //将领基础配置数据
     protected _armys: Map<number, ArmyData[]> = new Map<number, ArmyData[]>();
 
     public clearData(): void {

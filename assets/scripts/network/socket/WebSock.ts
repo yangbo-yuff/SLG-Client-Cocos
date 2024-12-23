@@ -73,8 +73,7 @@ export class WebSock implements ISocket {
             this.onJsonMessage(json);
             
             if(json.name !== "heartbeat") {
-                console.log("=============  onMessage key: ",this._key);
-                console.log("=============  onMessage message:", decrypted);
+                console.log("=============  OnMessage message:", decrypted);
             }
         }
 
@@ -159,8 +158,7 @@ export class WebSock implements ISocket {
      */
     public packAndSend2(send_data:any){
         if(send_data.name !== "heartbeat") {
-            console.log("=============  SendMessage key:", this._key);
-            console.log("=============  SendMessage data:", send_data);
+            console.log("=============  SendMessage data:", JSON.stringify(send_data));
         }
 
         var encrypt = this._key == ""?send_data:this.encrypt(send_data);

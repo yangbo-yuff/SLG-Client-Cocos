@@ -43,7 +43,7 @@ export default class ArmyCommand {
         EventMgr.on(ServerConfig.army_push, this.onGeneralArmyStatePush, this);
         EventMgr.on(ServerConfig.nationMap_scanBlock, this.onNationMapScanBlock, this);
 
-        //定时检测自己的军队是否有武将已经征兵完，如果是请求刷新
+        //定时检测自己的军队是否有将领已经征兵完，如果是请求刷新
         setInterval(() => {
             let myCity: MapCityData = MapCommand.getInstance().cityProxy.getMyMainCity();
             if (myCity != null){
@@ -55,7 +55,7 @@ export default class ArmyCommand {
                 for (let i: number = 0; i < armyList.length; i++) {
                     var army = armyList[i];
                     if (army != null && army.isGenConEnd()){
-                        console.log("有武将征兵完了");
+                        console.log("有将领征兵完了");
                         this.qryArmyOne(army.cityId, army.order);
                     }
                 }

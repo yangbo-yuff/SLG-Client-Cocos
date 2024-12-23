@@ -1,5 +1,5 @@
 // /**征兵相关**/
-// /**武将相关**/
+// /**将领相关**/
 
 import { _decorator } from 'cc';
 export class Conscript {
@@ -17,8 +17,8 @@ export class General {
 	reclamation_time: number = 0;           //屯田消耗时间，单位秒
 	reclamation_cost: number = 0;           //屯田消耗政令
 	draw_general_cost: number = 0;          //抽卡消耗金币
-	pr_point: number = 0;                   //合成一个武将或者的技能点
-	limit: number = 0;                      //武将数量上限
+	pr_point: number = 0;                   //合成一个将领或者的技能点
+	limit: number = 0;                      //将领数量上限
 }
 
 export class Role {

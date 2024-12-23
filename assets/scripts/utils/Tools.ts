@@ -45,13 +45,13 @@ export class Tools{
 
         codeObj[11] = "城市不是自己的";
         codeObj[12] = "升级失败";
-        codeObj[13] = "武将不存在";
-        codeObj[14] = "武将不是自己的";
+        codeObj[13] = "将领不存在";
+        codeObj[14] = "将领不是自己的";
         codeObj[15] = "军队不是自己的";
         codeObj[16] = "资源不足";
         codeObj[17] = "超过带兵限制";
-        codeObj[18] = "军队再忙";
-        codeObj[19] = "将领再忙";
+        codeObj[18] = "军队在忙";
+        codeObj[19] = "将领在忙";
         codeObj[20] = "不能放弃";
 
         codeObj[21] = "领地不是自己的";
@@ -62,8 +62,8 @@ export class Tools{
         codeObj[26] = "金币不足";
         codeObj[27] = "重复上阵";
         codeObj[28] = "cost不足";
-        codeObj[29] = "没有该合成武将";
-        codeObj[30] = "合成武将非同名";
+        codeObj[29] = "没有该合成将领";
+        codeObj[30] = "合成将领非同名";
 
         codeObj[31] = "统帅不足";
         codeObj[32] = "升级失败";
@@ -93,7 +93,7 @@ export class Tools{
         codeObj[54] = "不能拆除建筑";
         codeObj[55] = "超过征收次数";
         codeObj[56] = "cd内不能操作";
-        codeObj[57] = "武将超过上限了";
+        codeObj[57] = "将领超过上限了";
         codeObj[58] = "没有集市";
         codeObj[59] = "超过了收藏上限";
 
@@ -112,7 +112,7 @@ export class Tools{
             str = codeObj[code]
         }
 
-        console.log("getCodeStr:", str)
+        // console.log("getCodeStr:", str)
         return str;
     }
 

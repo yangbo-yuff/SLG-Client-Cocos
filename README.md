@@ -32,11 +32,11 @@ export { GameConfig };
 ### 城内设施
 ![城内设施](https://s1.imagehub.cc/images/2023/05/08/10.png)
 
-### 武将
-![武将](https://s1.imagehub.cc/images/2023/05/08/11a2c81d5956c6dee0.png)
+### 将领
+![将领](https://s1.imagehub.cc/images/2023/05/08/11a2c81d5956c6dee0.png)
 
-### 武将详情
-![武将详情](https://s1.imagehub.cc/images/2023/05/08/12.png)
+### 将领详情
+![将领详情](https://s1.imagehub.cc/images/2023/05/08/12.png)
 
 ### 友方主城
 ![友方主城](https://s1.imagehub.cc/images/2023/05/08/04.png)

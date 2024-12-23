@@ -146,7 +146,7 @@ export default class GeneralCommand {
         let sendData: any = {
             name: ServerConfig.general_drawGeneral,
             msg: {
-                drawTimes:drawTimes
+                drawTimes:10
             }
         };
         NetManager.getInstance().send(sendData);

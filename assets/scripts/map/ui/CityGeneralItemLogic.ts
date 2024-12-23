@@ -79,11 +79,11 @@ export default class CityGeneralItemLogic extends Component {
     protected onClickItem(): void {
         AudioManager.instance.playClick();
         if (this._data) {
-            //点击展示武将信息
+            //点击展示将领信息
             let cfg: GeneralConfig = GeneralCommand.getInstance().proxy.getGeneralCfg(this._data.cfgId);
             EventMgr.emit(LogicEvent.openGeneralDes, cfg, this._data);
         } else if (this.addNode.active) {
-            //上阵武将
+            //上阵将领
             var generalArr: number[] = this.getAllGenerals();
             EventMgr.emit(LogicEvent.openGeneralChoose, generalArr, this.index);
         }
@@ -125,7 +125,7 @@ export default class CityGeneralItemLogic extends Component {
             this.labelTip.string = desName + " 等级" + this._order + "开启";
             this.conBg.active = false;
         } else if (this._data == null) {
-            //未配置武将
+            //未配置将领
             this.infoNode.active = false;
             this.addNode.active = true;
             this.lockNode.active = false;
@@ -133,7 +133,7 @@ export default class CityGeneralItemLogic extends Component {
             this.conBg.active = false;
             
         } else {
-            //展示武将信息
+            //展示将领信息
             this.infoNode.active = true;
             this.addNode.active = false;
             this.lockNode.active = false;

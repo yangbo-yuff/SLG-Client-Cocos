@@ -110,7 +110,7 @@ export default class MapCommand {
     protected onNationMapConfig(data: any): void {
         console.log("onNationMapConfig", data);
         if (data.code == 0) {
-            this._proxy.setNationMapConfig(data.msg.Confs);
+            this._proxy.setNationMapConfig(data.msg.confs);
             this.enterMap();
         }
     }

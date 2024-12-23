@@ -51,7 +51,7 @@ export class SkillConf {
     des: string
     trigger: number //发起类型
     target: number  //目标类型
-    limit: number   //可以被武将装备上限
+    limit: number   //可以被将领装备上限
     arms:number[]   //可以装备的兵种
     include_effect: number[] //技能包括的效果
     levels:SkillLevel[]

@@ -73,7 +73,7 @@ export default class SkillLogic extends Component {
     }
 
 
-    /** type:0普通展示、type:1 学习、2:武将查看 **/
+    /** type:0普通展示、type:1 学习、2:将领查看 **/
     public setData(type:number, general:GeneralData, skillPos: number) {
         this._type = type;
         this._general = general;

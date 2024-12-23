@@ -92,8 +92,8 @@ export default class UnionCommand {
     protected onUnionMember(data: any, otherData: any): void {
         console.log("onUnionMember", data);
         if (data.code == 0) {
-            this._proxy.updateMemberList(data.msg.id,data.msg.Members);
-            EventMgr.emit(LogicEvent.updateUnionMember,data.msg.Members);
+            this._proxy.updateMemberList(data.msg.id,data.msg.members);
+            EventMgr.emit(LogicEvent.updateUnionMember,data.msg.members);
         }
         
     }

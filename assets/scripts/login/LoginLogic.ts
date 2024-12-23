@@ -20,7 +20,7 @@ export default class LoginLogic extends Component {
         EventMgr.on(LogicEvent.loginComplete, this.onLoginComplete, this);
 
         var data = LocalCache.getLoginValidation();
-        console.log("LoginLogic  data:",data)
+        // console.log("LoginLogic  data:",data)
         if(data){
             this.editName.string = data.username;
             this.editPass.string = data.password;

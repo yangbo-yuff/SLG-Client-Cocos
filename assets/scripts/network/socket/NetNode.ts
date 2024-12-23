@@ -133,12 +133,12 @@ export class NetNode {
     }
 
     protected onTimeOut(msg:any){
-        console.log("NetNode onTimeOut!",msg)
+        // console.log("NetNode onTimeOut!",msg)
         //超时删除 请求队列
         for (var i = 0; i < this._requests.length;i++) {
             let req = this._requests[i];
             if(msg.name == req.rspName && msg.seq == req.seq){
-                console.log("NetNode remove:", req)
+                // console.log("NetNode remove:", req)
                 this._requests.splice(i, 1);
                 this.destroyInvoke(req);
                 i--;

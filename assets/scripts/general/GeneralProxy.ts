@@ -1,7 +1,7 @@
 
 import { SpriteFrame } from "cc";
 
-/**武将(配置)*/
+/**将领(配置)*/
 export class GeneralConfig {
     name: string = "";
     cfgId: number = 0;
@@ -26,14 +26,14 @@ export class GeneralConfig {
     camp: number = 0;
 }
 
-/**武将等级配置*/
+/**将领等级配置*/
 export class GenaralLevelConfig {
     level: number = 0;
     exp: number = 0;
     soldiers: number = 0;
 }
 
-/**武将阵营枚举*/
+/**将领阵营枚举*/
 export class GeneralCampType {
     static Han: number = 1;
     static Qun: number = 2;
@@ -42,7 +42,7 @@ export class GeneralCampType {
     static Wu: number = 5;
 }
 
-/**武将共有配置*/
+/**将领共有配置*/
 export class GeneralCommonConfig {
     physical_power_limit: number = 100;
     cost_physical_power: number = 10;
@@ -57,7 +57,7 @@ export class gSkill {
 	cfgId: number = 0;
 }
 
-/**武将数据*/
+/**将领数据*/
 export class GeneralData {
     id: number = 0;
     cfgId: number = 0;
@@ -65,6 +65,7 @@ export class GeneralData {
     level: number = 0;
     physical_power: number = 0;
     order: number = 0;
+    star: number = 0;
     star_lv: number = 0;
     parentId: number = 0;
     state: number = 0;
@@ -91,6 +92,7 @@ export class GeneralData {
         data.level = serverData.level;
         data.order = serverData.order;
         data.physical_power = serverData.physical_power;
+        data.star = serverData.star;
         data.star_lv = serverData.star_lv;
         data.parentId = serverData.parentId;
         data.state = serverData.state;
@@ -120,7 +122,7 @@ export class GeneralData {
 }
 
 export default class GeneralProxy {
-    //武将基础配置数据
+    //将领基础配置数据
     protected _generalConfigs: Map<number, GeneralConfig> = new Map<number, GeneralConfig>();
     protected _levelConfigs: GenaralLevelConfig[] = [];
     protected _commonConfig: GeneralCommonConfig = new GeneralCommonConfig();
@@ -225,7 +227,7 @@ export default class GeneralProxy {
         });
     }
 
-    /**武将配置*/
+    /**将领配置*/
     public getGeneralCfg(cfgId: number): GeneralConfig {
         if (this._generalConfigs.has(cfgId)) {
             return this._generalConfigs.get(cfgId);
@@ -237,7 +239,7 @@ export default class GeneralProxy {
         return this._generalConfigs
     }
 
-    /**武将等级配置*/
+    /**将领等级配置*/
     public getGeneralLevelCfg(level: number): GenaralLevelConfig {
         if (level > 0 && level <= this._levelConfigs.length) {
             return this._levelConfigs[level - 1];
@@ -249,7 +251,7 @@ export default class GeneralProxy {
         return this._levelConfigs.length;
     }
 
-    /**武将头像素材*/
+    /**将领头像素材*/
     public getGeneralTex(cfgId: number): SpriteFrame {
         if (this._generalTexs.has(cfgId)) {
             return this._generalTexs.get(cfgId);
@@ -261,7 +263,7 @@ export default class GeneralProxy {
         this._generalTexs.set(cfgId, frame);
     }
 
-    /**武将相关公有配置*/
+    /**将领相关公有配置*/
     public getCommonCfg(): GeneralCommonConfig {
         return this._commonConfig;
     }
@@ -278,7 +280,7 @@ export default class GeneralProxy {
         return cnt
     }
 
-    /**我的武将列表*/
+    /**我的将领列表*/
     public getMyGenerals(): GeneralData[] {
         return Array.from(this._myGenerals.values());
     }
@@ -296,7 +298,7 @@ export default class GeneralProxy {
     }
 
 
-    /**我的武将*/
+    /**我的将领*/
     public getMyGeneral(id: number): GeneralData {
         if (this._myGenerals.has(id)) {
             return this._myGenerals.get(id);
@@ -305,7 +307,7 @@ export default class GeneralProxy {
     }
 
 
-    /**相同类型的武将id */
+    /**相同类型的将领id */
     public getGeneralIds(cfgId: number): number[] {
         let myGenerals: GeneralData[] = this.getMyGenerals();
         let tempGenerals: number[] = [];

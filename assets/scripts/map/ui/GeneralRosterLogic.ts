@@ -7,9 +7,9 @@ import GeneralHeadLogic from "./GeneralHeadLogic";
 
 // /**军队命令*/
 export class GeneralItemType {
-    static GeneralInfo: number = 0;//武将详情
-    static GeneralDispose: number = 1;//武将上阵
-    static GeneralConScript: number = 2;//武将征兵
+    static GeneralInfo: number = 0;//将领详情
+    static GeneralDispose: number = 1;//将领上阵
+    static GeneralConScript: number = 2;//将领征兵
     static GeneralNoThing: number = 3;//无用
     static GeneralSelect: number = 4;//选择
 }

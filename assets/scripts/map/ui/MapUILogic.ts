@@ -256,7 +256,7 @@ export default class MapUILogic extends Component {
         this._armySettingNode.getComponent(CityArmySettingLogic).setData(cityId, order);
     }
     /**
-     * 武将
+     * 将领
      */
     
     protected onClickGeneral(){
@@ -277,7 +277,7 @@ export default class MapUILogic extends Component {
 
 
     /**
-     * 武将选择
+     * 将领选择
      * @param data 
      * @param zIndex 
      */
@@ -299,7 +299,7 @@ export default class MapUILogic extends Component {
 
 
     /**
-     * 武将详情
+     * 将领详情
      */
     protected openGeneralDes(cfgData: any, curData: any): void {
         if (this._generalDesNode == null) {

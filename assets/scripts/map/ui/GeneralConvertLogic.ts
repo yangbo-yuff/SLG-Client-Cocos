@@ -118,6 +118,23 @@ export default class GeneralConvertLogic extends Component {
         var ids = Array.from(keys);
         GeneralCommand.getInstance().convert(ids);
     }
-    
 
+
+
+    protected onClickAll():void{
+        AudioManager.instance.playClick();
+        // TODO 过滤出四星及以下的将领
+        var ids = GeneralCommand.getInstance().proxy.getMyGeneralsNotUse().map(item=>{
+            if(item.star < 5){
+                return item.id;
+            }
+        });
+
+        if (ids.length <= 0){
+            EventMgr.emit(LogicEvent.showToast, "没有发现四星以及以下的将领哦！！！！");
+            return
+        }
+
+        GeneralCommand.getInstance().convert(ids);
+    }
 }

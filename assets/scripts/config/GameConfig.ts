@@ -2,7 +2,7 @@
 
 import { _decorator } from 'cc';
 const GameConfig = {
-    serverUrl: "ws://localhost:18004",
-    webUrl: "http://localhost:18088",
+    serverUrl: "ws://localhost:18004/ws",
+    webUrl: "http://localhost:18003",
 }
 export { GameConfig };

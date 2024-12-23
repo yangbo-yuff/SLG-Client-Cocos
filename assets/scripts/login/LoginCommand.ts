@@ -68,7 +68,7 @@ export default class LoginCommand {
 
     /**登录回调*/
     private onAccountLogin(data: any, otherData:any): void {
-        console.log("LoginProxy  login:", data , otherData);
+        // console.log("LoginProxy  login:", data , otherData);
         if (data.code == 0) {
             // this._proxy.loginData = data.msg;
             this._proxy.saveLoginData(data.msg);
@@ -198,7 +198,7 @@ export default class LoginCommand {
             }
         };
 
-        console.log("accountLogin:", send_data);
+        // console.log("accountLogin:", send_data);
         var otherData = { username: name, password: password };
         NetManager.getInstance().send(send_data,otherData);
     }
